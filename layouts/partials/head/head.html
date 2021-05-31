@@ -4,7 +4,9 @@
 {{- $description := partialCached "data/description" . .RelPermalink -}}
 <meta name='description' content='{{ $description }}'>
 
+{{ if .Keywords }}
 <meta name='keywords' content="{{ delimit .Keywords "," }}">
+{{ end }}
 
 {{- $title := partialCached "data/title" . .RelPermalink -}}
 <title>{{ $title }}</title>
